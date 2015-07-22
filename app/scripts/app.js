@@ -12,20 +12,19 @@ angular
   .module('resumeApp', [
     'ngAnimate',
     'ngCookies',
-    'ngResource',
-    'ngRoute'
+    'ngResource'
   ])
-  .config(function ($routeProvider) {
+/*  .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/skills', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })*/;
