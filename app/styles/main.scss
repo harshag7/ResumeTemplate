@@ -30,7 +30,7 @@ body {
 }
 
 h2 {
-    margin: 20px 0 35px;
+    margin: 10px 0 35px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -88,9 +88,9 @@ a:hover, a:focus {
 
 @media(min-width: 767px) {
     .navbar {
-        padding: 20px 0;
+        padding: 10px 0;
         border-bottom: none;
-     /*   background: transparent;*/
+        background: transparent;
         -webkit-transition: background .7s ease-in-out, padding .7s ease-in-out;
         -moz-transition: background .7s ease-in-out, padding .7s ease-in-out;
         transition: background .7s ease-in-out, padding .7s ease-in-out;
@@ -98,6 +98,7 @@ a:hover, a:focus {
     
     .top-nav-collapse {
         padding: 0;
+        opacity: 0.7;
         background-color: $dark;
     }
     
@@ -145,11 +146,11 @@ a:hover, a:focus {
   z-index: 2;
 }
 
-// Summary Section
-
-.summary {
-    margin-top: 50px;
+section > .container > div {
+    padding-top: 50px;
 }
+
+// Summary Section
 
 .profile-image {
     background-color: $dark;
@@ -161,23 +162,27 @@ a:hover, a:focus {
 // Skills Section
 
 .skills {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 // Education Section
 
 .main-education {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .main-experience {
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .professional-experience h3, .academic-experience h3 {
     font-weight: 500 !important;
     margin-bottom: 40px;
     font-size: 30px;
+}
+
+.academic-experience {
+    display: none;
 }
 
 .professional-experience .row {
@@ -204,4 +209,11 @@ a:hover, a:focus {
 
 .footer ul {
     list-style-type: none;
+}
+
+.page-scroll {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -webkit-transform;
+    -moz-transition-duration: 1s;
 }
