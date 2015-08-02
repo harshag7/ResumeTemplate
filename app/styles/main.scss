@@ -29,14 +29,14 @@ body {
   padding: 0.2em 0;
 }
 
-h2 {
-    margin: 10px 0 35px;
-    text-transform: uppercase;
+h2:not(:last-child) {
     letter-spacing: 1px;
+    color: $primary;
+    font-size: 25px;
 }
 
 div {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 a {
@@ -79,15 +79,31 @@ a:hover, a:focus {
     background-color: rgba (255,255,255,0.2);
 }
 
-/*
 .navbar-toggle {
     padding: 4px 6px;
     font-size: 18px; 
     color: $light;
-}*/
+    border: 1px solid $light;
+}
 
-@media(min-width: 767px) {
-    .navbar {
+.icon-bar {
+    background-color: darken($light, 20%);
+}
+
+.skills .col-xs-8 {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+.skills .col-xs-4 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 767px) { 
+    
+.navbar {
         padding: 10px 0;
         border-bottom: none;
         background: transparent;
@@ -105,6 +121,73 @@ a:hover, a:focus {
     .navbar-custon.top-nav-collapse {
         border-bottom: 1px solid rgba (255,255,255,0.2);
     }
+    
+    .jumbotron {
+        background-image: url("../images/empire_state.jpg") !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+        background-position: center !important; 
+        background-size: 100% 100% !important;
+    }
+    
+    h2:not(:last-child) {
+        margin: 10px 0 35px !important;
+        font-size: 30px !important;
+    }
+    
+    .professional-experience h3, .academic-experience h3 {
+        font-size: 25px !important;
+    }
+    
+    .quote {
+        font-size: 38px !important;
+    }
+
+    .quote-by {
+        font-size: 22px !important;
+    }
+    
+    .skills .col-xs-8 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 991px) { 
+    div {
+        font-size: 18px;
+    }
+    
+    .profile-image {
+        height: 240px !important;
+        width: 240px !important;
+        padding: 2px;
+    }
+    
+    .education-content {
+      padding-top: 30px !important;
+    }
+    
+    .amex-experience {
+        margin-top:40px !important;
+    }
+    
+    .columbia-experience {
+        margin-left: 40px !important;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    div {
+        font-size: 20px;
+    }
+    
+    .profile-image {
+        height: 270px !important;
+        width: 270px !important;
+    }
 }
 
 // Landing Page
@@ -115,10 +198,6 @@ a:hover, a:focus {
     background-color: transparent;
     color: $light;
     text-align: center;
-    background-image: url("../images/empire_state.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
 }
 
 .vertical-center {
@@ -152,11 +231,16 @@ section > .container > div {
 
 // Summary Section
 
+#summary, #skills, #education, #experience, #contact {
+    padding-top: 50px;
+}
+
 .profile-image {
     background-color: $dark;
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     padding: 2px;
+    margin-bottom: 30px;
 }
 
 // Skills Section
@@ -169,6 +253,11 @@ section > .container > div {
 
 .main-education {
     margin-top: 20px;
+ /*   background-image: url('../images/apple-macbook-classroom.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 100% 100%;*/
 }
 
 .main-experience {
@@ -178,7 +267,11 @@ section > .container > div {
 .professional-experience h3, .academic-experience h3 {
     font-weight: 500 !important;
     margin-bottom: 40px;
-    font-size: 30px;
+    font-size: 25px;
+}
+
+.professional-experience h3 {
+    margin-top: 0;
 }
 
 .academic-experience {
@@ -186,15 +279,23 @@ section > .container > div {
 }
 
 .professional-experience .row {
-    margin: 0 0 30px 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
+
+.professional-experience .row:not(:last-child) {
+    margin-bottom: 50px;
+}
+
 .experience-duration {
     margin-top: 10px;
     display: inline-block;
 }
 
 .education-content {
-    padding-top: 30px;
+    padding-top: 0;
 }
 
 .sub-education {
@@ -202,18 +303,107 @@ section > .container > div {
 }
 
 .footer {
-    margin-top: 50px;
     background: $dark;
+    color: $light;
+    padding-bottom: 80px; 
+}
+
+.footer h2 {
     color: $light;
 }
 
-.footer ul {
+ul {
     list-style-type: none;
 }
+
+.summary li {
+    margin-bottom: 10px;
+    list-style-position: inside;
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+/*
+.container li:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: FontAwesome;
+  content: "\f1b2";
+}*/
 
 .page-scroll {
     -webkit-transition-property: -webkit-transform;
     -webkit-transition-duration: 1s;
     -moz-transition-property: -webkit-transform;
     -moz-transition-duration: 1s;
+}
+
+.quote-section {
+    font-family: 'Niconne', cursive;
+}
+
+.lineart {
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    background-image: url("../images/line-art-new.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px;
+    
+}
+
+.quote {
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+
+.quote-by {
+    font-size: 18px;
+}
+
+.section-divider {
+    background-color: rgb(44,62,80);
+    height: 1px;
+}
+
+.container-bg {
+    padding-bottom: 40px;
+    background: -webkit-linear-gradient($light 90%, darken($light, 10%)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($light 90%, darken($light, 10%)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($light 90%, darken($light, 10%)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($light 90%, darken($light, 10%));
+}
+
+.icon-pad {
+    padding-right: 20px;
+}
+
+.rating-color {
+    color: $primary;
+}
+
+.skill-set > div > div {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+
+.text-center {
+    margin-top: 40px;
+}
+
+.horizontal-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#contact h2 {
+    margin-top: 0;
 }
